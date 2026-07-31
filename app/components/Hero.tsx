@@ -54,15 +54,17 @@ export default function Hero() {
           >
             PERSONAL WEBSITE
           </motion.p>
+<div className="hero-title">
 
-          <motion.h1
-            className="hero-title"
-            variants={itemVariants}
-          >
-            Fouad
-            <br />
-            Dadache
-          </motion.h1>
+  <Reveal delay={0.2}>
+    <div>Fouad</div>
+  </Reveal>
+
+  <Reveal delay={0.35}>
+    <div>Dadache</div>
+  </Reveal>
+
+</div>
 
           <motion.p
             className="hero-description"
