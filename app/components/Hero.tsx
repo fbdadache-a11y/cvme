@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 import Container from "./Container";
 import Background from "./Background";
-
+import Reveal from "./Reveal";
 const containerVariants = {
   hidden: {
     opacity: 0,
