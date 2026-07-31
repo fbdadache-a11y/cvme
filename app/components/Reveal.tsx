@@ -16,9 +16,7 @@ export default function Reveal({
   return (
     <div
       className={className}
-      style={{
-        overflow: "hidden",
-      }}
+      style={{ overflow: "hidden" }}
     >
       <motion.div
         initial={{
