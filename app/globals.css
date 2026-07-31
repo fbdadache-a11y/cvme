@@ -395,3 +395,68 @@ a {
   }
 
   }
+/* ==========================
+   Background
+========================== */
+
+.background{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+}
+
+.hero{
+  position:relative;
+  overflow:hidden;
+}
+
+.blob{
+  position:absolute;
+
+  width:550px;
+  height:550px;
+
+  border-radius:50%;
+
+  filter:blur(90px);
+
+  opacity:.22;
+}
+
+.blob-1{
+  background:#8FB8A6;
+
+  top:-180px;
+  left:-180px;
+}
+
+.blob-2{
+  background:#0E2A24;
+
+  right:-220px;
+  bottom:-220px;
+}
+
+.grid-pattern{
+
+  position:absolute;
+  inset:0;
+
+  background-image:
+
+  linear-gradient(
+      rgba(0,0,0,.035) 1px,
+      transparent 1px
+  ),
+
+  linear-gradient(
+      90deg,
+      rgba(0,0,0,.035) 1px,
+      transparent 1px
+  );
+
+  background-size:40px 40px;
+
+  mask-image:radial-gradient(circle,black 45%,transparent 95%);
+}
