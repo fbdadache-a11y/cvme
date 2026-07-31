@@ -5,35 +5,39 @@ import { motion } from "framer-motion";
 export default function Background() {
   return (
     <div className="background">
+
+      <div className="background-grid" />
+
       <motion.div
-        className="blob blob-1"
+        className="gradient gradient-1"
         animate={{
-          x: [0, 40, 0],
-          y: [0, -30, 0],
-          scale: [1, 1.08, 1],
+          x: [0, 120, 0],
+          y: [0, -80, 0],
+          scale: [1, 1.12, 1],
         }}
         transition={{
-          duration: 18,
+          duration: 30,
           repeat: Infinity,
           ease: "easeInOut",
         }}
       />
 
       <motion.div
-        className="blob blob-2"
+        className="gradient gradient-2"
         animate={{
-          x: [0, -50, 0],
-          y: [0, 40, 0],
-          scale: [1, 0.95, 1],
+          x: [0, -100, 0],
+          y: [0, 100, 0],
+          scale: [1, .9, 1],
         }}
         transition={{
-          duration: 24,
+          duration: 35,
           repeat: Infinity,
           ease: "easeInOut",
         }}
       />
 
-      <div className="grid-pattern" />
+      <div className="background-noise"/>
+
     </div>
   );
 }
