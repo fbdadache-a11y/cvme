@@ -1,24 +1,13 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type { Metadata } from 'next';
+import './globals.css';
+import './sections.css';
 
 export const metadata: Metadata = {
-  title: "Fouad Dadache | Portfolio",
+  title: 'Econovo Club | Turning Students Into Problem Solvers',
   description:
-    "Business Administration Student · AI-Assisted Digital Creator · Community Builder — Co-founder of ECONOVO Student Club.",
-  keywords: [
-    "Fouad Dadache",
-    "Portfolio",
-    "Business Administration",
-    "AI Creator",
-    "ECONOVO",
-    "Algeria",
-  ],
-  authors: [{ name: "Fouad Dadache", url: "https://github.com/fbdadache-a11y" }],
-  openGraph: {
-    title: "Fouad Dadache | Portfolio",
-    description:
-      "Business Administration Student · AI-Assisted Digital Creator · Community Builder",
-    type: "website",
+    'Econovo is a university club connecting economics, business, innovation, and practical skills.',
+  icons: {
+    icon: 'https://i.postimg.cc/vBCdy1F4/copilot-image-1784613842249.png',
   },
 };
 
@@ -28,20 +17,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" dir="ltr">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-          rel="stylesheet"
+        <script
+          // Runs before paint to avoid a light/dark flash on load
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var stored = localStorage.getItem('ec-theme');
+                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  var theme = stored || (prefersDark ? 'dark' : 'light');
+                  if (theme === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
         />
       </head>
-      <body className="antialiased">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
